@@ -19,6 +19,7 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
+
 class WebDriver:
     def __init__(self):
         self._driver: webdriver.Chrome
@@ -38,6 +39,7 @@ class WebDriver:
     def __exit__(self, exc_type, exc_value, exc_tb):
         logging.info("Close browser")
         self._driver.quit()
+
 
 class BerlinBot:
     def __init__(self):
@@ -68,6 +70,7 @@ class BerlinBot:
         # select Bosnien und Herzegowina
         s = Select(driver.find_element(By.ID, 'xi-sel-400'))
         s.select_by_visible_text("Bosnien und Herzegowina")
+
         # eine person
         s = Select(driver.find_element(By.ID, 'xi-sel-422'))
         s.select_by_visible_text("eine Person")
@@ -111,7 +114,6 @@ class BerlinBot:
             time.sleep(15)
         
         # todo play something and block the browser
-
 
     def run_once(self):
         with WebDriver() as driver:
