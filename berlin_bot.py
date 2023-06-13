@@ -169,5 +169,6 @@ class BerlinBot:
         if block:
             sleep(nssound.duration())
 
+
 if __name__ == "__main__":
     BerlinBot().run_loop()
